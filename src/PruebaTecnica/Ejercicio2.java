@@ -26,9 +26,7 @@ public class Ejercicio2 {
     }
 
     public static void equipajeAvion() {
-
         Scanner leer = new Scanner(System.in);
-
         final double CAPACIDAD = 18000;
         final double DOLAR = 3500;
         boolean salir = false;
@@ -76,7 +74,6 @@ public class Ejercicio2 {
                 salir = true;
             }
             if (!salir) {
-
                 int decision = Integer.parseInt(JOptionPane.showInputDialog("Desea ingresar otro bulto?\n"
                         + "Si- Ingrese 1\n"
                         + "No- Ingrese un número diferente de 1"));
@@ -84,26 +81,21 @@ public class Ejercicio2 {
             }
         }
         pesoPromedio = totalKilos / cont;
-
         NumberFormat nf = NumberFormat.getInstance(new Locale("es", "CO")); //este objeto de tipo NumberFormat me permite formatear los números de acuerdo a la región
         NumberFormat nf1 = NumberFormat.getInstance(new Locale("en", "US"));
-        lista2.forEach(
-                //la e dice POR CADA ELEMENTO expresion LAMDA
-                e -> System.out.println(e.peso + "                "
-                        + nf.format(e.valor) + "                   "
-                        + nf1.format(e.dolar)));
-        mensaje = "\nCAPACIDAD DE KILOS DEL AVIÓN:                " + CAPACIDAD
-                + "\nTOTAL DE BULTOS REGISTRADOS:                  " + cont
-                + "\nTOTAL DE KILOS REGISTRADOS:                   " + totalKilos
+        mensaje = "\nCAPACIDAD DE KILOS DEL AVIÓN:      " + CAPACIDAD
+                + "\nTOTAL DE BULTOS REGISTRADOS:       " + cont
+                + "\nTOTAL DE KILOS REGISTRADOS:        " + totalKilos
                 + "\nEL PESO PROMEDIO DE LOS KILOS ES:      " + pesoPromedio
-                + "\nBULTO CON MAYOR PESO:                         " + mayor
-                + "\nBULTO CON MENOR PESO:                         " + menor
-                + "\nPESO BULTO            VALOR PESOS          VALOR DOLARES :\n";
+                + "\nBULTO CON MAYOR PESO:      " + mayor
+                + "\nBULTO CON MENOR PESO:      " + menor
+                + "\n\nPESO BULTO     VALOR PESOS     VALOR DOLARES :\n";
         for (Bulto e : lista2) {
-            mensaje += e.peso + "                    "
-                    + nf.format(e.valor) + "                      "
+            mensaje += e.peso + "                               "
+                    + nf.format(e.valor) + "                   "
                     + nf1.format(e.dolar) + "\n";
         }
         JOptionPane.showMessageDialog(null, mensaje);
+        lista2.clear();
     }
 }
