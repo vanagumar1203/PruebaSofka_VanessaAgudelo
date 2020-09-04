@@ -42,8 +42,11 @@ public class Ejercicio1 {
             valorPasaje = distancia * TARIFA;
             descuento = valorPasaje * DESCUENTO;
             valorFinalPasaje = valorPasaje - descuento;
-            JOptionPane.showMessageDialog(null, "VALOR PASAJE:    "+valorPasaje + "\n"
-                + "DESCUENTO:          " +descuento+ "\n"
+            JOptionPane.showMessageDialog(null, "De acuerdo a que su trayecto es superior a 1000km\n"
+                                                + "y su estadía es superior a 7 días, la compañía le otorga\n"
+                                                + "un descuento del 30% en el costo de su pasaje\n"
+                    + "\nVALOR PASAJE:    "+valorPasaje + "\n"
+                + "DESCUENTO:       " +descuento+ "\n"
                 + "TOTAL A PAGAR:   " +valorFinalPasaje);
         }
         else {
